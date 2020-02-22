@@ -64,6 +64,51 @@ html, body {
     height: 100%;
 }
 
+.h4-pre {
+    background: #bdc3c7;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    display: inline-block;
+    margin: 10px 0 0;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    vertical-align: bottom;
+    font-size: 16px;
+}
+
+.instructions {
+    margin: 0 0 16px;
+    padding: 0 15px;
+    background-color: #ecf0f1;
+    white-space: pre-wrap;
+    overflow: hidden;
+    border-radius: 0 15px 15px;
+}
+
+.instructions .h5 {
+    margin: 0 0 16px    
+}
+
+pre {
+    display: block;
+    font-size: 13px;
+    line-height: 0;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.colortextred {
+    color: red;
+}
+
+.colortextgreen {
+    color: green;
+}
+
 footer {
     color: #134d00;
     background-color: #134d00;
@@ -78,3 +123,4 @@ footer a {
 footer a:hover {
     color: #efefef;
 }
+

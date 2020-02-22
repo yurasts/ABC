@@ -57,7 +57,76 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <p>GIT</p>
+            <hr>
+            <h1 class="title">1. Подготовка</h1>
+            <h3> <em>01</em> Установка имени и электронной почты </h3>
+            <h4 class="h4-pre">Выполнить</h4>
+            <pre class="instructions">
+              <h5>config --global user.name "Your Name"<br>git config --global user.email "your_email@whatever.com"</h5>
+            </pre>
+            <hr>
+            <h3> <em>02</em> Создание репозитория </h3>
+            <p>В каталоге проекта используя командную строку или TERMINAL Visual Studio Code:</p>
+            <h4 class="h4-pre">Выполнить</h4>
+            <pre class="instructions">
+              <h5>git init</h5>
+            </pre>
+            <p>В папке проекта появится скрытая папка git</p>
+            <p>Всегда можно проверить наличия файлов и определить их статус:</p>
+            <h4 class="h4-pre">Выполнить</h4>
+            <pre class="instructions">
+              <h5>git status</h5>
+            </pre>
+            <p><span class="colortextred">index.html</span> - новый файл не отслеживается системой git или в файл внесли изменения (статус 1)</p>
+            <p><span class="colortextgreen">style.css</span> - файл добавлен в отслеживание системой git (статус 2)</p>
+            <p>После commita, т.е. создания контрольной точки, добавленных в отслеживание файлов при выполнении команды "git status" не будет видно (статус 3)</p>
+            <hr>
+            <h3> <em>03</em> Добавление файлов во 2-е состояние "отслеживание" или индексировать изменения </h3>
+            <p>Можно добавлять все файлы, один конкретный файл или группу файлов</p>
+            <h4 class="h4-pre">Выполнить</h4>
+            <pre class="instructions">
+              <h5>git add -A<br>git add style.css<br>git add *.css</h5>
+            </pre>
+            <p> git теперь знает об изменении, но изменение пока не записано в репозиторий.</p>           
+            <p>Если вы решили, что не хотите коммитить изменения, можно снять индексацию этих изменений:</p>
+            <h4 class="h4-pre">Выполнить</h4>
+            <pre class="instructions">
+              <h5>git reset</h5>
+            </pre>
+            <h3> <em>04</em> Добавление файлов в 3-е состояние Commit </h3>
+            <h4 class="h4-pre">Выполнить</h4>
+            <pre class="instructions">
+              <h5>$ git commit -a -m"test commit"</h5>
+            </pre>
+            <h3>Merge (слияние)</h3>
+            <p>абракодабра "enter"<br>ctrl+"C" два раза<br>:wq! "enter"</p>
+            <h3> Установка связи с Github</h3>
+            <p>Брать на github</p>
+            <h4 class="h4-pre">Выполнить</h4>
+            <pre class="instructions">
+              <h5>git remote add origin https://github.com/yurasts/ABC.git</h5>
+            </pre>
+            <p> Перенесение репозитория на github:</p>
+            <pre class="instructions">
+              <h5>git push -u origin master</h5>
+            </pre>
+            <p>добавление изменений на github:</p>
+            <pre class="instructions">
+              <h5>git push</h5>
+            </pre>
+            <p>обновление данных с github:</p>
+            <pre class="instructions">
+              <h5>git pull</h5>
+            </pre>
+
+            <h3> Добавляем клон на другое рабочее место</h3>
+            <p>Брать на github</p>
+            <h4 class="h4-pre">Выполнить</h4>
+            <pre class="instructions">
+              <h5>$ git clone https://github.com/yurasts/ABC.git ABC_home</h5>
+            </pre>
+            <p>Где "ABC_home" новая папка</p>
+
           </div>
         </div>
 
