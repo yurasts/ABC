@@ -56,12 +56,8 @@
     height: 63px;
 }
 
-.wrapper {
+html, body .wrapper {
     min-height: 100%;
-}
-
-html, body {
-    height: 100%;
 }
 
 .h4-pre {
