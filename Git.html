@@ -57,7 +57,6 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <hr>
             <h1 class="title">GIT + github.com</h1>
             <h4 class="h4-pre">Загрузить гит можно тут:</h4>
             <pre class="instructions">
@@ -73,35 +72,23 @@
             <pre class="instructions">
               <h5>$ git config --global user.name "Your Name"<br>$ git config --global user.email "your_email@whatever.com"</h5>
             </pre>
-            <hr>
-            <h3> Создание репозитория </h3>
-            <h4 class="h4-pre">В каталоге проекта используя командную строку</h4>
+            <h4 class="h4-pre">Создание репозитория</h4>
             <pre class="instructions">
               <h5>$ git init</h5>
             </pre>
             <p>В папке проекта появится скрытая папка git</p>
             <p>Либо в github. Клонируем репозиторий на локальную машину: 
-              если ключи сгенерированы можно через SSH (иначе через HTTPS), копируем </p>    
-            <h4 class="h4-pre">переходим в папку где будет git сопровождение</h4>
-            <pre class="instructions">
-              <h5>$ cd /c/data/temp</h5>
-            </pre>
-            <h4 class="h4-pre">проверка папки назначения:</h4>
-            <pre class="instructions">
-              <h5>$ pwd</h5>
-            </pre>
-            <h4 class="h4-pre">клонируем проект созданный на githab.com (SSH или HTTPS)</h4>
+              если ключи сгенерированы можно через SSH (иначе через HTTPS), копируем </p>
+
+             <h4 class="h4-pre">клонируем проект созданный на githab.com (SSH или HTTPS)</h4>
             <pre class="instructions">
               <h5>$ git clone git@github.com:yurasts/git-demo.git</h5>
             </pre>
             <p><span class="colortextred">ctrl+ins</span> - вставка в git bash  / <span class="colortextred">shift+ins</span> - копирование в git bash</p>
-                        <h4 class="h4-pre">list убедимся что создалась директория</h4>
+
+            <h4 class="h4-pre">работа с папками</h4>
             <pre class="instructions">
-              <h5>$ ls</h5>
-            </pre>
-            <h4 class="h4-pre">переходим в папку</h4>
-            <pre class="instructions">
-              <h5>$ cd /c/data/temp/git-demo</h5>
+              <h5>$ pwd  <span class="colortextgreen">- текущий адрес</span><br>$ cd /c/data/temp/git-demo  <span class="colortextgreen"> - переход в папку</span><br>$ cd .. <span class="colortextgreen">- выйти на 1 уровень выше</span><br>$ cd ../.. <span class="colortextgreen">- выйти на 2 уровня выше</span><br>$ cd !$ <span class="colortextgreen">- перейти в только что созданную папку</span><br>$ cd name <span class="colortextgreen">- войти в папку</span><br>$ ls <span class="colortextgreen">- просмотр содержимого папки</span></h5>
             </pre>
             <h4 class="h4-pre">проверка действительно ли мы на github а не каком-то другом хостингеу</h4>
             <pre class="instructions">
@@ -114,106 +101,88 @@
             <p><span class="colortextred">index.html</span> - новый файл не отслеживается системой git или в файл внесли изменения (статус 1)</p>
             <p><span class="colortextgreen">style.css</span> - файл добавлен в отслеживание системой git (статус 2)</p>
             <p>После commita, т.е. создания контрольной точки, добавленных в отслеживание файлов при выполнении команды "git status" не будет видно (статус 3)</p>
-            <hr>
 
             <h3> Добавление файлов в состояние "отслеживание" или индексировать изменения </h3>
-            <h4 class="h4-pre">Можно добавлять все файлы, один конкретный файл или группу файлов</h4>
             <pre class="instructions">
-              <h5>$ git add -A<br>$ git add style.css<br>$ git add *.css</h5>
+              <h5>$ git add -A <span class="colortextgreen">- все файлы</span><br>$ git add style.css <span class="colortextgreen">- один файл</span><br>$ git add *.css<span class="colortextgreen">- группу файлов</span></h5>
+              <h5>$ git reset <span class="colortextgreen">- отмена добавления в отслеживание</span></h5>
             </pre>
-            <p> git теперь знает об изменении, но изменение пока не записано в репозиторий.</p>           
-            <p>Если вы решили, что не хотите коммитить изменения, можно снять индексацию этих изменений:</p>
-            <h4 class="h4-pre">Выполнить</h4>
-            <pre class="instructions">
-              <h5>git reset</h5>
+            
+            <h3> Добавление файлов в состояние Commit и передача на github </h3>
+              <pre class="instructions">
+              <h5>$ git commit -m "add first 2 lines in the song.txt" <span class="colortextgreen">- добавление комментария об изменении файла</span><br>$ git push <span class="colortextgreen">- добавление изменений на github</span><br>$ git pull <span class="colortextgreen">- обновление данных с github</span><br>$ git log <span class="colortextgreen">- смотрим историю коммитов</span></h5>
             </pre>
-            <h3> Добавление файлов в состояние Commit и передача на githab </h3>
-            <h4 class="h4-pre">комментарий о добавлении измененного файла</h4>
-            <pre class="instructions">
-              <h5>$ git commit -m "add first 2 lines in the song.txt"</h5>
-            </pre>
-            <h4 class="h4-pre">добавление изменений на github:</h4>
-            <pre class="instructions">
-              <h5>$ git push</h5>
-            </pre>
-            <h4 class="h4-pre">обновление данных с github:</h4>
-            <pre class="instructions">
-              <h5>$ git pull</h5>
-            </pre>
-            <h4 class="h4-pre">смотрим историю коммитов</h4>
-            <pre class="instructions">
-              <h5>$ git log</h5>
-            </pre>
+
             <h4 class="h4-pre">вспомогательные скины (упрощают работу)</h4>
             <pre class="instructions">
               <h5>$ git gui&<br>$ gitk</h5>
             </pre>
-            <h3> Изменение или отмена действий </h3>
-            <h3> Working directory </h3>
-            <h4 class="h4-pre">откат изменения в одном файле</h4>
-            <pre class="instructions">
-              <h5>$ git checkout -- file.txt</h5>
-            </pre>
 
-            <h4 class="h4-pre">возврат всех файлов в исходное состояние которое известно git.</h4>
+            <h3> Изменение или отмена действий </h3>
+            <h4 class="h4-pre">Working directory</h4>
             <pre class="instructions">
-              <h5>$ git checkout .</h5>
+              <h5>$ git checkout -- file.txt <span class="colortextgreen">- откат изменения в одном конкретном файле</span></h5>
+              <h5>$ git checkout . <span class="colortextgreen">- возврат всех файлов в исходное состояние которое известно git</span></h5>
             </pre>
             <p> ВЕРНУТЬ КОНТЕНТ КОТОРЫЙ БЫЛ ДО "checkout" НЕВОЗМОЖНО</p>
 
-            <h4 class="h4-pre">удаляет новые файлы</h4>
             <pre class="instructions">
-              <h5>$ git clean -xdf</h5>
+              <h5>$ git clean -xdf <span class="colortextgreen">- удаляет новые файлы</span></h5>
             </pre>
-            <p> флаги: x - игнорирует файл ignor, d - удаляет в т.ч. и дирректории, f - сила без неё ничего не произойдет</p>
+            <p> флаги: x - игнорирует файл ignor, d - удаляет в т.ч. и дирректории, f - force без неё ничего не произойдет</p>
 
-            <h3> Staging area (index) </h3>
-
-            <h4 class="h4-pre">возвращае файл из статуса до "git add"</h4>
+            <h4 class="h4-pre">Staging area (index)</h4>
             <pre class="instructions">
-              <h5>$ git reset -- file.txt</h5>
+              <h5>$ git reset -- file.txt <span class="colortextgreen">- возвращает файл из коммита в файловую систему (git gui& клик по иконке в нижней части переместит в верхнюю)</span></h5>
+              <h5>$ git reset --hard <span class="colortextgreen">- возвращает файл из коммита в файловую систему с удалением всех изменений</span></h5>
             </pre>
 
-            <h3> Local branch (КАК ОТМЕНИТЬ КОММИТ) </h3>
-            <h4 class="h4-pre">контент не нужен и содержимое можно удалить</h4>
+            <h4 class="h4-pre">Local branch (КАК ОТМЕНИТЬ КОММИТ)</h4>
             <pre class="instructions">
-              <h5>$ git reset HEAD^^ (HEAD~2)</h5>
-            </pre>
-            <h4 class="h4-pre">в случае если в коммит нужно что-то дописать</h4>
-            <pre class="instructions">
-              <h5>git commit --amend -m "commit message"</h5>
+              <h5>$ git reset --soft HEAD~1 <span class="colortextgreen">- отменить 1 коммит, контент изменений сохранится, файл в индексе</span> </h5>
+              <h5>$ git reset --mixed HEAD~1 <span class="colortextgreen">- отменить 1 коммит, контент изменений сохранится, файл НЕ в индексе</span> </h5>
+              <h5>$ git reset --hard HEAD~1 <span class="colortextgreen">- отменить 1 коммит, контент изменений НЕ сохранится</span> </h5>
+              <h5>$ git commit --amend -m "commit message" <span class="colortextgreen">- в случае если в коммит нужно что-то дописать</span></h5>
             </pre>
 
 
-            <h3>Merge (слияние)</h3>
-            <p>абракодабра "enter"<br>ctrl+"C" два раза<br>:wq! "enter"</p>
-            <h3> Установка связи с Github</h3>
-            <p>Брать на github</p>
 
-            <h4 class="h4-pre">Выполнить</h4>
+            <h3> Работа с ветками </h3>
+            <h4 class="h4-pre">создание, пререход, объединение веток</h4>
             <pre class="instructions">
-              <h5>git remote add origin https://github.com/yurasts/ABC.git</h5>
-            </pre>
-            <p> Перенесение репозитория на github:</p>
-            <pre class="instructions">
-              <h5>git push -u origin master</h5>
-            </pre>
-            <p>добавление изменений на github:</p>
-            <pre class="instructions">
-              <h5>git push</h5>
-            </pre>
-            <p>обновление данных с github:</p>
-            <pre class="instructions">
-              <h5>git pull</h5>
+              <h5>$ git checkout -b feature <span class="colortextgreen">- cоздание ветки с имененм feature</span> </h5>
+              <h5>$ git checkout main <span class="colortextgreen">- перейти в ветку main</span> </h5>
+              <h5>$ git merge feature <span class="colortextgreen">-  объединение ветки "main" с "feature", окончательный комит в gitgui&</span> </h5>
             </pre>
 
-            <h3> Добавляем клон на другое рабочее место</h3>
-            <p>Брать на github</p>
-            <h4 class="h4-pre">Выполнить</h4>
+            <h4 class="h4-pre">tags</h4>
             <pre class="instructions">
-              <h5>$ git clone https://github.com/yurasts/ABC.git ABC_home</h5>
+              <h5>$ git tag ver1 <span class="colortextgreen">- маркировка коммита тегом ver1</span> </h5>
+              <h5>$ git tag --list <span class="colortextgreen">- view tags</span> </h5>
+              <h5>$ git push --tags <span class="colortextgreen">- push tag</span> </h5>
+              <h5>$ git checkout ver1 <span class="colortextgreen">- Check it out</span> </h5>
             </pre>
-            <p>Где "ABC_home" новая папка</p>
+
+            <h4 class="h4-pre">rebase</h4>
+            <pre class="instructions">
+              <h5>$ git rebase main <span class="colortextgreen">- родительская точка главной ветки (main) перемещается на актуальную</span> </h5>
+            </pre>
+
+            <h4 class="h4-pre">remote</h4>
+            <pre class="instructions">
+              <h5>$ git remote add name url <span class="colortextgreen">- cоздание нового подключения к удаленному репозиторию. Такого же результата можно достичь, напрямую отредактировав файл /.git/config с помощью текстового редактора</span> </h5>
+              <h5>$ git remote rm name <span class="colortextgreen">- удаление подключения к удаленному репозиторию с именем</span> </h5>
+              <h5>$ git remote add origin git@github.com:user/repo.git <span class="colortextgreen">- подключение к новому репозиторию</span> </h5>
+              <h5>$ git push --set-upstream origin main <span class="colortextgreen">- git push автоматически создаст ветку в удаленном репо, если это необходимо</span> </h5>
+              <h5>$ git remote –v <span class="colortextgreen">- просмотреть к какому репозиторию относимся</span> </h5>
+              <h5>$ git remote show <span class="colortextgreen">- посмотреть имя</span> </h5>
+            </pre>
+
+            <h4 class="h4-pre">Работа с файлами при помощи bash</h4>
+            <pre class="instructions">
+              <h5>$ echo > newFile.txt  <span class="colortextgreen">- создание файла</span> </h5>
+              <h5>$ vi file.txt <span class="colortextgreen">- создание файла (:w -запись / :q -выход) (мануал https://modulesunraveled.com/command-line-beginners/creating-new-text-documents-vi-editor )</span> </h5>
+            </pre>
 
             <a href="https://githowto.com/ru">https://githowto.com/ru</a>
 

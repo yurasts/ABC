@@ -70,11 +70,11 @@ html, body .wrapper {
     text-transform: uppercase;
     font-weight: 700;
     vertical-align: bottom;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .instructions {
-    margin: 0 0 16px;
+    margin: 0 0 3px;
     padding: 0 15px;
     background-color: #ecf0f1;
     white-space: pre-wrap;
