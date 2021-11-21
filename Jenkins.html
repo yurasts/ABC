@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ABC</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="row">
+          <nav role="navigation" class="navbar navbar-inverse">
+            <div class="container">
+              <div class="navbar-header header">
+                <div class="container">
+                  <div class="row">
+                  </div>
+                </div>
+                <button bype="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div id="navbarCollapse" class="collapse navbar-collapse navbar-right">
+                <ul class="nav nav-pills">
+                  <li><a href="index.html">Главная</a></li>
+                  <li><a href="git.html">GIT</a></li>
+                  <li><a href="Node.html">NodeJS</a></li>
+                  <li class="active"><a href="Jenkins.html">Jenkins</a></li>
+                  <li><a href="Bootstrap.html">Bootstrap</a></li>
+                  <li><a href="#">JS</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="title">Jenkins</h1>
+
+            <h4 class="h4-pre">Необходимые запросы и инфрмация для установки Jenkins:</h4>
+            <pre class="instructions">
+              <h5><a href="https://www.oracle.com/	">https://www.oracle.com/</a><span class="colortextgreen">	        # тут скачиваем Java jdk</span><br>win+r   cmd 	java -version<span class="colortextgreen">   # версия Java</span><br><a href="https://www.jenkins.io/	">https://www.jenkins.io//</a><span class="colortextgreen">	# тут скачиваем Jenkins</span><br>win+r 	cmd<span class="colortextgreen">                     # вызов коммандной строки</span><br>win+r   cmd 	hostname<span class="colortextgreen">        # имя hostname</span><br>win+r	services.msc<span class="colortextgreen">      	# список сервисов управление Jenkins через панель services</span><br>win+r 	control<span class="colortextgreen">      	        # панель управления</span><br>win+r 	RegEdit<span class="colortextgreen">      	        # редактор реестра</span><br>win+r	winver<span class="colortextgreen">      	        # показывает версию Windows</span><br>win+r	sysdm.cpl<span class="colortextgreen">      	        # system properties (свойства системы)</span></h5>
+            </pre>
+
+            <h4>При установке могут появиться сложности. Во первых из-за установленной версии Windows Home (усложняет управление настройками), во вторых Jenkins исправно работает только на версиях JAVA 8 - 11. Смотрим видео ниже</h4>
+
+            <h4 class="h4-pre">Мануал для установки Jenkins:</h4>
+            <pre class="instructions">
+              <h5><a href="https://www.youtube.com/watch?v=1y8RsUbxtAw">https://www.youtube.com/watch?v=1y8RsUbxtAw</a><br><a href="https://stackoverflow.com/questions/63410442/jenkins-installation-windows-10-service-logon-credentials">https://stackoverflow.com/questions/63410442/jenkins-installation-windows-10-service-logon-credentials</a></h5>
+            </pre>
+
+            <h4>По умолчанию установщик Jenkins предлагает установить сервер в папку вида "C:/Program Files". Из-за того что в пути есть пробел (приводит к сложностям вызова приложений, например maven) рекомендуется устанавливать Jenkins в место где нет пробелов в пути, например "C:\ProgramData\Jenkins".</h4>
+
+            <h4>Установочный пакет jenkins при установке запросит указать путь к папке Java, следует указать папку версии java JDK любой версии 8 - 11</h4>
+
+            <h4 class="h4-pre">Список плагинов рекомендуемых EPAM:</h4>
+            <pre class="instructions">
+              <h5>Dashboard View<br>Workspace Cleanup<br>JUnit<br>Pipeline<br>Build pipeline - ставится из плагинов<br>Parameterized Trigger<br>Copy Artifact<br>Git<br>Matrix Project<br>SSH Build Agents<br>WMI Windows Agents<br>Mailer<br>Locale</h5>
+            </pre>
+
+            <h4 class="h4-pre">Build triggers (Most common):</h4>
+            <pre class="instructions">
+              <h5>On-demand run<span class="colortextgreen">      - запуск по клику</span><br>Other job finish<span class="colortextgreen">   - одна job вызывает другую job</span><br>Cron schedule<span class="colortextgreen">      - по расписанию</span><br>SCM check<span class="colortextgreen">          - запуск при появлении новых коммитов в системе контроля версий (GIT)</span></h5>
+            </pre>
+            
+            <h4 class="h4-pre">Build triggers after job:</h4>
+            <pre class="instructions">
+              <h5><span class="colortextgreen">job -> Configure -> Build Triggers -> Build after other projects are built -> job after</span></h5>
+            </pre>           
+            
+            <h4 class="h4-pre">Build periodically, Cron syntax (запуск по расписанию):</h4>
+            <pre class="instructions">
+              <h5><span class="colortextgreen">job -> Configure -> Build Triggers -> Build periodically -> 'Cron syntax'</span></h5>
+              <h5><span class="colortextgreen">job -> Configure -> Build Triggers -> Poll SCM-> 'Cron syntax'</span></h5>
+              <h5>*/5 * * * *<span class="colortextgreen">       – every 5 minutes</span><br>0 */2 * * mon-fri<span class="colortextgreen"> – every two hours at the top of the hour Monday through Friday</span><br>0 0 1,10,15 * *<span class="colortextgreen">   – midnight on 1st ,10th & 15th of month</span><br>@midnight<span class="colortextgreen">         – some time between 12:00 AM and 2:59 AM</span></h5>              
+            </pre>
+
+            <h4>Parameterized Jobs in Jenkins: ECHO %environvent%</h4>
+            <h4>Build pipeline view -> Тригеры сборки -> Build after other projects are built</h4>
+            
+            <h4 class="h4-pre">Удаление Jenkins:</h4>
+            <pre class="instructions">
+              <h5>кнопка win  cmd  правой кнопкой / от имени администратора<span class="colortextgreen"> # вызов коммандной строки от имени администратора</span><br>sc delete Jenkins<span class="colortextgreen">      	        # удаление Jenkins (из коммандной строки от имени администратора)</span></h5>
+            </pre>            
+
+          </div>
+        </div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p class="text-center"><a href="http://ya.ru">yury_shab</a></p>
+      </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
