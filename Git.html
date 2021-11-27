@@ -137,6 +137,11 @@
               <h5>$ git reset --soft HEAD~1 <span class="colortextblue">                  - отменить 1 коммит, контент изменений сохранится, файл в индексе</span><br>$ git reset --mixed HEAD~1 <span class="colortextblue">                 - отменить 1 коммит, контент изменений сохранится, файл НЕ в индексе</span><br>$ git reset --hard HEAD~1 <span class="colortextblue">                  - отменить 1 коммит, контент изменений НЕ сохранится</span><br>$ git commit --amend -m "commit message" <span class="colortextblue">   - в случае если в коммит нужно что-то дописать</span></h5>
             </pre>
 
+            <h4 class="h4-pre">КАК ОТМЕНИТЬ КОММИТ ЗАПУШЕННЫЙ НА GITHAB</h4>
+            <pre class="instructions">
+              <h5>$ git reset --hard c7981caa96585ff5491b74b1e327f3026a819e05 <span class="colortextblue">   - отменяется 1 коммит (хеш-код из githab)</span><br>$ git push --force <span class="colortextblue">                 - пушится на  измененный коммит</span></h5>
+            </pre>
+
             <h3> Работа с ветками </h3>
             <h4 class="h4-pre">создание, пререход, объединение веток</h4>
             <pre class="instructions">
