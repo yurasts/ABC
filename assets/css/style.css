@@ -1,5 +1,5 @@
 .navbar-inverse {
-    background-color: #1a6600;
+    background-color: #945001;
     border-radius: 0;
 }
 
@@ -21,7 +21,7 @@
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
     color: #fff;
-    background-color: #134d00;
+    background-color: #683901;
 }
 
 .nav-pills>li>a {
@@ -29,7 +29,7 @@
 }
 
 .nav-pills>li>a:hover {
-   background-color: #134d00;   
+   background-color: #814801;   
 }
 
 @media (max-width: 767px) {
@@ -111,13 +111,13 @@ pre {
 
 footer {
     color: #134d00;
-    background-color: #134d00;
+    background-color: #945001;
     padding: 17px 0 18px 0;
     border-top: 1px solid #000;
 }
 
 footer a {
-    color: #999;
+    color: #000#fff;
 }
 
 footer a:hover {
