@@ -85,7 +85,7 @@
 
             <h4 class="h4-pre">работа с папками</h4>
             <pre class="instructions">
-              <h5>$ pwd  <span class="colortextgreen">- текущий адрес</span><br>$ cd /c/data/temp/git-demo  <span class="colortextgreen"> - переход в папку</span><br>$ cd .. <span class="colortextgreen">- выйти на 1 уровень выше</span><br>$ cd ../.. <span class="colortextgreen">- выйти на 2 уровня выше</span><br>$ mkdir First Project <span class="colortextgreen">- создать каталог</span><br>$ cd !$ <span class="colortextgreen">- перейти в только что созданную папку</span><br>$ cd name <span class="colortextgreen">- войти в папку</span><br>$ ls <span class="colortextgreen">- просмотр содержимого папки</span></h5>
+              <h5><span class="colortextred">$ pwd</span> <span class="colortextblue">- текущий адрес</span><br>$ cd /c/data/temp/git-demo  <span class="colortextblue"> - переход в папку</span><br>$ cd .. <span class="colortextblue">- выйти на 1 уровень выше</span><br>$ cd ../.. <span class="colortextblue">- выйти на 2 уровня выше</span><br>$ mkdir First Project <span class="colortextblue">- создать каталог</span><br>$ cd !$ <span class="colortextblue">- перейти в только что созданную папку</span><br>$ cd name <span class="colortextblue">- войти в папку</span><br>$ ls <span class="colortextblue">- просмотр содержимого папки</span></h5>
             </pre>
             <h4 class="h4-pre">проверка действительно ли мы на github а не каком-то другом хостингеу</h4>
             <pre class="instructions">
@@ -96,18 +96,18 @@
               <h5>$ git status</h5>
             </pre>
             <p><span class="colortextred">index.html</span> - новый файл не отслеживается системой git или в файл внесли изменения (статус 1)</p>
-            <p><span class="colortextgreen">style.css</span> - файл добавлен в отслеживание системой git (статус 2)</p>
+            <p><span class="colortextblue">style.css</span> - файл добавлен в отслеживание системой git (статус 2)</p>
             <p>После commita, т.е. создания контрольной точки, добавленных в отслеживание файлов при выполнении команды "git status" не будет видно (статус 3)</p>
 
             <h3> Добавление файлов в состояние "отслеживание" или индексировать изменения </h3>
             <pre class="instructions">
-              <h5>$ git add -A <span class="colortextgreen">- все файлы</span><br>$ git add style.css <span class="colortextgreen">- один файл</span><br>$ git add *.css<span class="colortextgreen">- группу файлов</span></h5>
-              <h5>$ git reset <span class="colortextgreen">- отмена добавления в отслеживание</span></h5>
+              <h5>$ git add -A <span class="colortextblue">- все файлы</span><br>$ git add style.css <span class="colortextblue">- один файл</span><br>$ git add *.css<span class="colortextblue">- группу файлов</span></h5>
+              <h5>$ git reset <span class="colortextblue">- отмена добавления в отслеживание</span></h5>
             </pre>
             
             <h3> Добавление файлов в состояние Commit и передача на github </h3>
               <pre class="instructions">
-              <h5>$ git commit -m "add first 2 lines in the song.txt" <span class="colortextgreen">- добавление комментария об изменении файла</span><br>$ git push <span class="colortextgreen">- добавление изменений на github</span><br>$ git pull <span class="colortextgreen">- обновление данных с github</span><br>$ git log <span class="colortextgreen">- смотрим историю коммитов</span></h5>
+              <h5>$ <span class="colortextred">git commit -m "add first 2 lines in the song.txt"</span> <span class="colortextblue">- добавление комментария об изменении файла</span><br>$ git push <span class="colortextblue">- добавление изменений на github</span><br>$ git pull <span class="colortextblue">- обновление данных с github</span><br>$ git log <span class="colortextblue">- смотрим историю коммитов</span></h5>
             </pre>
 
             <h4 class="h4-pre">вспомогательные скины (упрощают работу)</h4>
@@ -118,65 +118,50 @@
             <h3> Изменение или отмена действий </h3>
             <h4 class="h4-pre">Working directory</h4>
             <pre class="instructions">
-              <h5>$ git checkout -- file.txt <span class="colortextgreen">- откат изменения в одном конкретном файле</span></h5>
-              <h5>$ git checkout . <span class="colortextgreen">- возврат всех файлов в исходное состояние которое известно git</span></h5>
+              <h5>$ git checkout -- file.txt <span class="colortextblue">- откат изменения в одном конкретном файле</span><br>$ git checkout . <span class="colortextblue">- возврат всех файлов в исходное состояние которое известно git</span></h5>
             </pre>
             <p> ВЕРНУТЬ КОНТЕНТ КОТОРЫЙ БЫЛ ДО "checkout" НЕВОЗМОЖНО</p>
 
             <pre class="instructions">
-              <h5>$ git clean -xdf <span class="colortextgreen">- удаляет новые файлы</span></h5>
+              <h5>$ git clean -xdf <span class="colortextblue">- удаляет новые файлы</span></h5>
             </pre>
             <p> флаги: x - игнорирует файл ignor, d - удаляет в т.ч. и дирректории, f - force без неё ничего не произойдет</p>
 
             <h4 class="h4-pre">Staging area (index)</h4>
             <pre class="instructions">
-              <h5>$ git reset -- file.txt <span class="colortextgreen">- возвращает файл из коммита в файловую систему (git gui& клик по иконке в нижней части переместит в верхнюю)</span></h5>
-              <h5>$ git reset --hard <span class="colortextgreen">- возвращает файл из коммита в файловую систему с удалением всех изменений</span></h5>
+              <h5>$ git reset -- file.txt <span class="colortextblue">- возвращает файл из коммита в файловую систему (git gui& клик по иконке в нижней части переместит в верхнюю)</span><br>$ git reset --hard <span class="colortextblue">- возвращает файл из коммита в файловую систему с удалением всех изменений</span></h5>
             </pre>
 
             <h4 class="h4-pre">Local branch (КАК ОТМЕНИТЬ КОММИТ)</h4>
             <pre class="instructions">
-              <h5>$ git reset --soft HEAD~1 <span class="colortextgreen">- отменить 1 коммит, контент изменений сохранится, файл в индексе</span> </h5>
-              <h5>$ git reset --mixed HEAD~1 <span class="colortextgreen">- отменить 1 коммит, контент изменений сохранится, файл НЕ в индексе</span> </h5>
-              <h5>$ git reset --hard HEAD~1 <span class="colortextgreen">- отменить 1 коммит, контент изменений НЕ сохранится</span> </h5>
-              <h5>$ git commit --amend -m "commit message" <span class="colortextgreen">- в случае если в коммит нужно что-то дописать</span></h5>
+              <h5>$ git reset --soft HEAD~1 <span class="colortextblue">                  - отменить 1 коммит, контент изменений сохранится, файл в индексе</span><br>$ git reset --mixed HEAD~1 <span class="colortextblue">                 - отменить 1 коммит, контент изменений сохранится, файл НЕ в индексе</span><br>$ git reset --hard HEAD~1 <span class="colortextblue">                  - отменить 1 коммит, контент изменений НЕ сохранится</span><br>$ git commit --amend -m "commit message" <span class="colortextblue">   - в случае если в коммит нужно что-то дописать</span></h5>
             </pre>
 
             <h3> Работа с ветками </h3>
             <h4 class="h4-pre">создание, пререход, объединение веток</h4>
             <pre class="instructions">
-              <h5>$ git checkout -b feature <span class="colortextgreen">- cоздание ветки с имененм feature</span> </h5>
-              <h5>$ git checkout main <span class="colortextgreen">- перейти в ветку main</span> </h5>
-              <h5>$ git merge feature <span class="colortextgreen">-  объединение ветки "main" с "feature", окончательный комит в gitgui&</span> </h5>
+              <h5>$ git checkout -b feature <span class="colortextblue">   - cоздание ветки с имененм feature</span><br>$ git checkout main <span class="colortextblue">         - перейти в ветку main</span><br>$ git merge feature <span class="colortextblue">         - объединение ветки "main" с "feature", окончательный комит в gitgui&</span> </h5>
             </pre>
 
             <h4 class="h4-pre">tags</h4>
             <pre class="instructions">
-              <h5>$ git tag ver1 <span class="colortextgreen">- маркировка коммита тегом ver1</span> </h5>
-              <h5>$ git tag --list <span class="colortextgreen">- view tags</span> </h5>
-              <h5>$ git push --tags <span class="colortextgreen">- push tag</span> </h5>
-              <h5>$ git checkout ver1 <span class="colortextgreen">- Check it out</span> </h5>
+              <h5>$ git tag ver1 <span class="colortextblue">       - маркировка коммита тегом ver1</span><br>$ git tag --list <span class="colortextblue">     - view tags</span><br>$ git push --tags <span class="colortextblue">    - push tag</span><br>$ git checkout ver1 <span class="colortextblue">  - Check it out</span> </h5>
             </pre>
 
             <h4 class="h4-pre">rebase</h4>
             <pre class="instructions">
-              <h5>$ git rebase main <span class="colortextgreen">- родительская точка главной ветки (main) перемещается на актуальную</span> </h5>
+              <h5>$ git rebase main <span class="colortextblue">- родительская точка главной ветки (main) перемещается на актуальную</span> </h5>
             </pre>
 
             <h4 class="h4-pre">remote</h4>
             <pre class="instructions">
-              <h5>$ git remote add name url <span class="colortextgreen">- cоздание нового подключения к удаленному репозиторию. Такого же результата можно достичь, напрямую отредактировав файл /.git/config с помощью текстового редактора</span> </h5>
-              <h5>$ git remote rm name <span class="colortextgreen">- удаление подключения к удаленному репозиторию с именем</span> </h5>
-              <h5>$ git remote add origin git@github.com:user/repo.git <span class="colortextgreen">- подключение к новому репозиторию</span> </h5>
-              <h5>$ git push --set-upstream origin main <span class="colortextgreen">- git push автоматически создаст ветку в удаленном репо, если это необходимо</span> </h5>
-              <h5>$ git remote –v <span class="colortextgreen">- просмотреть к какому репозиторию относимся</span> </h5>
-              <h5>$ git remote show <span class="colortextgreen">- посмотреть имя</span> </h5>
+              <h5>$ git remote add name url <span class="colortextblue">   - новоe подключения к удаленному репозиторию.Можно отредактировть файл /.git/config</span><br>$ git remote rm name <span class="colortextblue">        - удаление подключения к удаленному репозиторию с именем</span><br>$ git remote add origin git@github.com:user/repo.git <span class="colortextblue">    - подключение к новому репозиторию</span><br>$ git push --set-upstream origin main <span class="colortextblue">    - git push автоматически создаст ветку в удаленном репо, если это необходимо</span><br>$ git remote –v <span class="colortextblue">             - просмотреть к какому репозиторию относимся</span><br>$ git remote show <span class="colortextblue">           - посмотреть имя</span> </h5>
             </pre>
 
             <h4 class="h4-pre">Работа с файлами при помощи bash</h4>
             <pre class="instructions">
-              <h5>$ echo > newFile.txt  <span class="colortextgreen">- создание файла</span> </h5>
-              <h5>$ vi file.txt <span class="colortextgreen">- создание файла (:w -запись / :q -выход) (мануал https://modulesunraveled.com/command-line-beginners/creating-new-text-documents-vi-editor )</span> </h5>
+              <h5>$ echo > newFile.txt  <span class="colortextblue">- создание файла</span> </h5>
+              <h5>$ vi file.txt <span class="colortextblue">- создание файла (:w -запись / :q -выход)</span><br><span class="colortextblue">Мануал: </span><a href="https://modulesunraveled.com/command-line-beginners/creating-new-text-documents-vi-editor">https://modulesunraveled.com/command-line-beginners/creating-new-text-documents-vi-editor</a></h5>
             </pre>
 
             <a href="https://githowto.com/ru">https://githowto.com/ru</a>

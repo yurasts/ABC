@@ -49,16 +49,16 @@
           </nav>
         </div>
     </div>
-
+    
     <div class="wrapper">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <h1 class="title">Jenkins</h1>
-
-            <h4 class="h4-pre">Необходимые запросы и инфрмация для установки Jenkins:</h4>
+            
+            <h4 class="h4-pre">Необходимые запросы и инфрмация для установки и работы с Jenkins:</h4>
             <pre class="instructions">
-              <h5><a href="https://www.oracle.com/	">https://www.oracle.com/</a><span class="colortextgreen">	        # тут скачиваем Java jdk</span><br>win+r   cmd 	java -version<span class="colortextgreen">   # версия Java</span><br><a href="https://www.jenkins.io/	">https://www.jenkins.io//</a><span class="colortextgreen">	# тут скачиваем Jenkins</span><br>win+r 	cmd<span class="colortextgreen">                     # вызов коммандной строки</span><br>win+r   cmd 	hostname<span class="colortextgreen">        # имя hostname</span><br>win+r	services.msc<span class="colortextgreen">      	# список сервисов управление Jenkins через панель services</span><br>win+r 	control<span class="colortextgreen">      	        # панель управления</span><br>win+r 	RegEdit<span class="colortextgreen">      	        # редактор реестра</span><br>win+r	winver<span class="colortextgreen">      	        # показывает версию Windows</span><br>win+r	sysdm.cpl<span class="colortextgreen">      	        # system properties (свойства системы)</span></h5>
+              <h5><a href="https://www.oracle.com/	">https://www.oracle.com/</a><span class="colortextblue">	        # тут скачиваем Java jdk</span><br><a href="https://www.jenkins.io/	">https://www.jenkins.io/</a><span class="colortextblue">         # тут скачиваем Jenkins</span><br><a href="https://maven.apache.org/ ">https://maven.apache.org/</a><span class="colortextblue">       # тут скачиваем Maven</span><br><a href="https://csharpcoderr.com/5265// ">https://csharpcoderr.com/5265/</a><span class="colortextblue">  # как установить Maven на windows</span><br>win+r 	cmd<span class="colortextblue">                     # вызов коммандной строки</span><br>win+r   cmd 	hostname<span class="colortextblue">        # имя hostname</span><br>win+r   cmd 	java -version<span class="colortextblue">   # версия Java</span><br>win+r   cmd 	pwd<span class="colortextblue">             # выводится полный путь к текущей рабочей директории</span><br>win+r   cmd 	nslookup<span class="colortextblue">        # выводится IP адрес машины</span><br>win+r   cmd 	ipconfig<span class="colortextblue">        # выводится IP адрес и более полную информацию о машине в сети</span><br>win+r   cmd 	mvn --version<span class="colortextblue">   # выводится версия maven</span><br>win+r   cmd 	set maven<span class="colortextblue">       # выводится путь к maven</span><br>win+r	services.msc<span class="colortextblue">      	# список сервисов управление Jenkins через панель services</span><br>win+r 	control<span class="colortextblue">      	        # панель управления</span><br>win+r 	RegEdit<span class="colortextblue">      	        # редактор реестра</span><br>win+r	winver<span class="colortextblue">      	        # показывает версию Windows</span><br><span class="colortextred">win+r	sysdm.cpl</span><span class="colortextblue">      	        # system properties (свойства системы), </span><span class="colortextred"> редактирование переменной среды, PATH </span></h5>
             </pre>
 
             <h4>При установке могут появиться сложности. Во первых из-за установленной версии Windows Home (усложняет управление настройками), во вторых Jenkins исправно работает только на версиях JAVA 8 - 11. Смотрим видео ниже</h4>
@@ -79,59 +79,86 @@
 
             <h4 class="h4-pre">Build triggers (Most common):</h4>
             <pre class="instructions">
-              <h5>On-demand run<span class="colortextgreen">      - запуск по клику</span><br>Other job finish<span class="colortextgreen">   - одна job вызывает другую job</span><br>Cron schedule<span class="colortextgreen">      - по расписанию</span><br>SCM check<span class="colortextgreen">          - запуск при появлении новых коммитов в системе контроля версий (GIT)</span></h5>
+              <h5>On-demand run<span class="colortextblue">      - запуск по клику</span><br>Other job finish<span class="colortextblue">   - одна job вызывает другую job</span><br>Cron schedule<span class="colortextblue">      - по расписанию</span><br>SCM check<span class="colortextblue">          - запуск при появлении новых коммитов в системе контроля версий (GIT)</span></h5>
             </pre>
             
             <h4 class="h4-pre">Build triggers after job:</h4>
             <pre class="instructions">
-              <h5><span class="colortextgreen">job -> Configure -> Build Triggers -> Build after other projects are built -> job after</span></h5>
+              <h5><span class="colortextblue">job -> Configure -> Build Triggers -> Build after other projects are built -> job after</span></h5>
             </pre>           
             
             <h4 class="h4-pre">Build periodically, Cron syntax (запуск по расписанию):</h4>
             <pre class="instructions">
-              <h5><span class="colortextgreen">job -> Configure -> Build Triggers -> Build periodically -> 'Cron syntax'</span></h5>
-              <h5><span class="colortextgreen">job -> Configure -> Build Triggers -> Poll SCM-> 'Cron syntax'</span></h5>
-              <h5>*/5 * * * *<span class="colortextgreen">       – every 5 minutes</span><br>0 */2 * * mon-fri<span class="colortextgreen"> – every two hours at the top of the hour Monday through Friday</span><br>0 0 1,10,15 * *<span class="colortextgreen">   – midnight on 1st ,10th & 15th of month</span><br>@midnight<span class="colortextgreen">         – some time between 12:00 AM and 2:59 AM</span></h5>              
+              <h5><span class="colortextblue">job -> Configure -> Build Triggers -> Build periodically -> 'Cron syntax'</span></h5>
+              <h5><span class="colortextblue">job -> Configure -> Build Triggers -> Poll SCM-> 'Cron syntax'</span></h5>
+              <h5>*/5 * * * *<span class="colortextblue">       – every 5 minutes</span><br>0 */2 * * mon-fri<span class="colortextblue"> – every two hours at the top of the hour Monday through Friday</span><br>0 0 1,10,15 * *<span class="colortextblue">   – midnight on 1st ,10th & 15th of month</span><br>@midnight<span class="colortextblue">         – some time between 12:00 AM and 2:59 AM</span></h5>              
             </pre>
 
             <h4 class="h4-pre">Git integration</h4>
             <pre class="instructions">
-              <h5>Install Git plugin<span class="colortextgreen">   - если не установлен</span><br>Let Jenkins know where Git is installed (%GIT_HOME%\cmd\git.exe)</h5>
-              <h5>Dashboard -> Manage Jenkins -> Global Tool Configuration<span class="colortextgreen">  - проверяем наличие Git</span><br>Name<span class="colortextgreen"> – вместо Default - версия Git (win+r cmd git version)</span><br>Path to Git executable<span class="colortextgreen">   – скорее всего Jenkins знает где находится Git (если нет: win+r cmd where git)</span></h5> 
-              <h5>c:\ProgramData\Jenkins\.jenkins\workspace\Github job\<span class="colortextgreen">   - Место хранения развернутого с githab проекта</span></h5>
-              
-            </pre>
-            
-            <h4 class="h4-pre">Artifacts</h4>
-            <pre class="instructions">
-              <h5>New job -> Configure -> Build -> Execute Windows batch command -> (ECHO Hello > file.txt) -> start job<span class="colortextgreen">   - создание file.txt (artifact)</span><br><span class="colortextgreen">ЧТОБЫ ФАЙЛ (artifact) БЫЛ ВИДЕН НА СТРАНИЦЕ ПРОЕКТА</span><br>Configure -> Post-build Actions -> Archive the artifacts -> start job<br><span class="colortextgreen">ПРОБРОСИТЬ АРТИФАКТ НА ДРУГУЮ JOB</span><br>Configure JOB назначения -> Build -> Copy artifacts from another project (указать из какой job и какой файл)</h5>
+              <h5>Install Git plugin<span class="colortextblue">   - если не установлен</span><br>Let Jenkins know where Git is installed (%GIT_HOME%\cmd\git.exe)</h5>
+              <h5>Dashboard -> Manage Jenkins -> Global Tool Configuration<span class="colortextblue">  - проверяем наличие Git</span><br>Name<span class="colortextblue"> – вместо Default - версия Git (win+r cmd git version)</span><br>Path to Git executable<span class="colortextblue">   – скорее всего Jenkins знает где находится Git (если нет: win+r cmd where git)</span></h5> 
+              <h5>c:\ProgramData\Jenkins\.jenkins\workspace\Github job\<span class="colortextblue">   - Место хранения развернутого с githab проекта</span></h5>
             </pre>
 
+            <h4 class="h4-pre">Artifacts</h4>
+            <pre class="instructions">
+              <h5>New job -> Configure -> Build -> Execute Windows batch command -> (ECHO Hello > file.txt) -> start job
+                
+                
+                <span class="colortextblue">   - создание file.txt (artifact)</span><br><span class="colortextblue">ЧТОБЫ ФАЙЛ (artifact) БЫЛ ВИДЕН НА СТРАНИЦЕ ПРОЕКТА</span><br>Configure -> Post-build Actions -> Archive the artifacts -> start job<br><span class="colortextblue">ПРОБРОСИТЬ АРТИФАКТ НА ДРУГУЮ JOB</span><br>Configure JOB назначения -> Build -> Copy artifacts from another project (указать из какой job и какой файл)</h5>
+            </pre>
                         
             <h4 class="h4-pre">Parameterized jobs</h4>
             <pre class="instructions">
-              <h5>Configure -> General -> This project is parameterized -> Choice Parameter -> (add name & param) <span class="colortextgreen">   - создание параметризованной job, после выполнения job выберается переменная среды которую можно ипользовать:</span><br>Configure -> Build -> Execute Windows batch command -> (ECHO %environmant%)<span class="colortextgreen"> - вывод параметра в консоль (если jenkins запускается по расписанию по умолчанию выводится первый параметр)</span><br>Configure -> General -> This project is parameterized -> Choice Parameter -> String Parameter -> (add Name & Default Value)<span class="colortextgreen"> - добавление тектового параметра</span>Configure -> Build -> See the list of available environment variables<span class="colortextgreen"> - вывод параметра в консоль (если jenkins запускается по расписанию по умолчанию выводится первый параметр)</span> - переменные доступны для сценариев оболочки </h5>
+              <h5>Configure -> General -> This project is parameterized -> Choice Parameter -> (add name & param) <span class="colortextblue">   - создание параметризованной job, после выполнения job выберается переменная среды которую можно ипользовать:</span><br>Configure -> Build -> Execute Windows batch command -> (ECHO %environmant%)<span class="colortextblue"> - вывод параметра в консоль (если jenkins запускается по расписанию по умолчанию выводится первый параметр)</span><br>Configure -> General -> This project is parameterized -> Choice Parameter -> String Parameter -> (add Name & Default Value)<span class="colortextblue"> - добавление тектового параметра</span>Configure -> Build -> See the list of available environment variables<span class="colortextblue"> - вывод параметра в консоль (если jenkins запускается по расписанию по умолчанию выводится первый параметр)</span> - переменные доступны для сценариев оболочки </h5>
             </pre>
 
             <h4 class="h4-pre">Build Pipeline View - графический плагин</h4>
             <pre class="instructions">
-              <h5>+ -> Build pipeline view -> Pipeline Flow -> Select Initial Job<span class="colortextgreen"> - настройка плагина, указываем job которая удет тригерить следующие</span></h5>
+              <h5>+ -> Build pipeline view -> Pipeline Flow -> Select Initial Job<span class="colortextblue"> - настройка плагина, указываем job которая удет тригерить следующие</span></h5>
             </pre>
             
             <h4 class="h4-pre">Agents (nodes)</h4>
             <pre class="instructions">
-              <h5>Build Executor Status -> New node -> (принято в имя вносить hostname подключаемой для работы машины) + Permanent Agent<span class="colortextgreen"> - машины которые можно подключить к серверу и на них выполнять реальную работу (клонить из GIT проект, запускать сборки с помощью maven, тесты, параллелить jobs и т.д.)</span><br>указываем:<br> - Remote root directory (пр.: c:\Data\slave) (важно: без замыкающего слэша, с ним не работает)<br>Labels (пр.:win10 x64 chrom ff)<br>Usage (1.Использовать по макс. 2.Только избранные job (выбираем №2))<br>!!ВАЖНО: Manage Jenkins -> Configure Global Security -> Agents/TCP port for inbound agents/-> Random<span class="colortextgreen"> - включили дополнительную опцию в настройках Nodes</span><br>Configure node -> Launch method -> Let Jenkins control this Windows agent as a Windows service</h5>
+              <h5>Build Executor Status -> New node -> (принято в имя вносить hostname подключаемой для работы машины) + Permanent Agent<span class="colortextblue"> - машины которые можно подключить к серверу и на них выполнять реальную работу (клонить из GIT проект, запускать сборки с помощью maven, тесты, параллелить jobs и т.д.)</span><br>указываем:<br> - Remote root directory (пр.: c:\Data\slave) (важно: без замыкающего слэша, с ним не работает)<br>Labels (пр.:win10 x64 chrom ff)<br>Usage (1.Использовать по макс. 2.Только избранные job (выбираем №2))<br>!!ВАЖНО: Manage Jenkins -> Configure Global Security -> Agents/TCP port for inbound agents/-> Random<span class="colortextblue"> - включили дополнительную опцию в настройках Nodes</span><br>Configure node -> Launch method -> Let Jenkins control this Windows agent as a Windows service</h5>
             </pre>
 
             <h4 class="h4-pre">Запуск Job на новой Node</h4>
             <pre class="instructions">
-              <h5>Job -> Configure -> Restrict where this project can be run (win10 or chrome or hostname -> Build Now)<span class="colortextgreen"> - как итог в консоли: Finished: SUCCESS (результат см.: c:\Data\slave). Управлять mode можно из консоли.</span></h5>
+              <h5>Job -> Configure -> Restrict where this project can be run (win10 or chrome or hostname -> Build Now)<span class="colortextblue"> - как итог в консоли: Finished: SUCCESS (результат см.: c:\Data\slave). Управлять mode можно из консоли.</span></h5>
+            </pre>
+
+            <h4 class="h4-pre">Запуск Job на удаленном node на Linux</h4>
+            <pre class="instructions">
+              <h5><a href="https://elearn.epam.com/courses/course-v1:EPAM+CIJ+RU/courseware/a5dd8b942ab2412bb3bb0a5dd2a10cc2/866c150fa80a4c6c94b244671c10f39b/2?activate_block_id=block-v1%3AEPAM%2BCIJ%2BRU%2Btype%40vertical%2Bblock%40d4620e74ca4d40a792a9420fffc49955">https://elearn.epam.com/courses/course-v1:EPAM+CIJ+RU/courseware/a5dd8b942ab2412bb3bb0a5dd2a10cc2/866c150fa80a4c6c94b244671c10f39b/2?activate_block_id=block-v1%3AEPAM%2BCIJ%2BRU%2Btype%40vertical%2Bblock%40d4620e74ca4d40a792a9420fffc49955</a></h5>
+            </pre>
+
+            <h4 class="h4-pre">Jenkins security</h4>
+            <pre class="instructions">
+              <h5><span class="colortextblue">If you locked yourself out (УТРАТА ДОСТУПА К JANKINS, ПОТЕРЯ ЛОГИНА ИЛИ ПАРОЛЯ)</span><br>1. Go to $JENKINS_HOME in the file system and find config.xml file.<br>2. Look for the (useSecurity)true(/useSecurity) element in this file. Replace true with false<br>3. Remove the elements authorizationStrategy and securityRealm<br>4. Restart Jenkins<br><span class="colortextblue">Скорректировав config.xml перезапускаем jenkins, он запустится с новыми настройками без авторизованного пользователя.</span><br>ВОССТАНАВЛИВАЕМ: <span class="colortextblue">Manage Jenkins -> Configure Global Security -> (v) Disable remember me -> (v) Jenkins’ own user database -> (v) Allow users to sign up (снять когда вся команда зарегистрировалась) -> Save</span><br><span class="colortextblue">Manage Jenkins -> Configure Global Security -> (v) Logged-in users can do anything -> Save</span><br>Useful plugin<br><span class="colortextblue">Matrix Authorization Strategy (УСТАНАЛИВАЕМ)</span><br>Manage Jenkins -> Configure Global Security -> (v) Matrix-based security -> Create & Save<br><span class="colortextblue">Можно создавать группы (Developers / managers / testers) и наделять каждую группу своими правами</span></h5>
+            </pre>
+
+            <h4 class="h4-pre">Jenkins backup</h4>
+            <pre class="instructions">
+              <h5>ThinBackup<br><span class="colortextblue">Manage Jenkins -> ThinBackup</span><br>Job Configuration History<br><span class="colortextblue">Позволяет отслеживать изменения настроек jenkins</span></h5>
+            </pre>
+
+            <h4 class="h4-pre">Выполнение задачи</h4>
+            <pre class="instructions">
+              <h5>2) Создайте задачу которая будет делать следующее: <br> - Клонировать проект https://github.com/vitalliuss/helloci <span class="colortextblue"> # Dashboard -> Source Code Management -> Repository URL -> https://github.com/...</span><br> - Запускать тесты из проекта в директори Java с помощью цели mvn test<span class="colortextblue"> # Configure -> Build -> Invoke top-level Maven targets -> (v) Maven Version -> (v) name -> advanced (указываем адрес POM file) (java/pom.xml)</span><br>3) Настройте билд триггеры: <br> - Запуск тестов не позднее чем через 5 минут после коммита в git <span class="colortextblue"> # Build Triggers -> Poll SCM -> (H/5 * * * *)</span><br> - Каждый будний день в полночь<span class="colortextblue"> # Build Triggers -> Build periodically -> (0 0 * * 1-5)</span><br>4) Опубликуйте файл “Java\target\surefire-reports\com.github.vitalliuss.helloci.AppTest.txt” как артефакт <br><span class="colortextblue">Configure job -> Archive the artifacts -> Java\target\surefire-reports\...</span></h5>
+            </pre>
+
+
+            <h4 class="h4-pre">Maven integration</h4>
+            <pre class="instructions">
+              <h5>Configure -> Build -> Invoke top-level Maven targets -> (v) Maven Version ### -> (v) name -> advanced (указываем адрес POM file) (java/pom.xml)<span class="colortextblue">   - если не установлен</span><br></h5>
             </pre>
 
 
             <h4 class="h4-pre">Удаление Jenkins:</h4>
             <pre class="instructions">
-              <h5>кнопка win  cmd  правой кнопкой / от имени администратора<span class="colortextgreen"> # вызов коммандной строки от имени администратора</span><br>sc delete Jenkins<span class="colortextgreen">      	        # удаление Jenkins (из коммандной строки от имени администратора)</span></h5>
+              <h5>кнопка find  cmd (от имени администратора) <span class="colortextblue"> # вызов коммандной строки от имени администратора</span><br>кнопка win+x (от имени администратора) <span class="colortextblue"> # вызов коммандной строки от имени администратора</span><br>sc delete Jenkins<span class="colortextblue">      	        # удаление Jenkins (из коммандной строки от имени администратора)</span></h5>
             </pre>            
 
           </div>
@@ -143,7 +170,7 @@
 
     <footer>
       <div class="container">
-        <p class="text-center"><a href="http://ya.ru">yury_shab</a></p>
+        <p class="text-center"><a href="https://translate.google.com/?sl=en&tl=ru&op=translate">yury_shab</a></p>
       </div>
     </footer>
 

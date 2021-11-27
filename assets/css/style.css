@@ -61,7 +61,7 @@ html, body .wrapper {
 }
 
 .h4-pre {
-    background: #bdc3c7;
+    background: #000;
     border-radius: 5px 5px 0 0;
     color: #fff;
     display: inline-block;
@@ -103,6 +103,10 @@ pre {
 
 .colortextgreen {
     color: green;
+}
+
+.colortextblue {
+    color: blue;
 }
 
 footer {
