@@ -61,7 +61,7 @@
               <h5><a href="https://www.oracle.com/	">https://www.oracle.com/</a><span class="colortextblue">	        # тут скачиваем Java jdk</span><br><a href="https://www.jenkins.io/	">https://www.jenkins.io/</a><span class="colortextblue">         # тут скачиваем Jenkins</span><br><a href="https://maven.apache.org/ ">https://maven.apache.org/</a><span class="colortextblue">       # тут скачиваем Maven</span><br><a href="https://csharpcoderr.com/5265// ">https://csharpcoderr.com/5265/</a><span class="colortextblue">  # как установить Maven на windows</span><br>win+r 	cmd<span class="colortextblue">                     # вызов коммандной строки</span><br>win+r   cmd 	hostname<span class="colortextblue">        # имя hostname</span><br>win+r   cmd 	java -version<span class="colortextblue">   # версия Java</span><br>win+r   cmd 	pwd<span class="colortextblue">             # выводится полный путь к текущей рабочей директории</span><br>win+r   cmd 	nslookup<span class="colortextblue">        # выводится IP адрес машины</span><br>win+r   cmd 	ipconfig<span class="colortextblue">        # выводится IP адрес и более полную информацию о машине в сети</span><br>win+r   cmd 	mvn --version<span class="colortextblue">   # выводится версия maven</span><br>win+r   cmd 	set maven<span class="colortextblue">       # выводится путь к maven</span><br>win+r	services.msc<span class="colortextblue">      	# список сервисов управление Jenkins через панель services</span><br>win+r 	control<span class="colortextblue">      	        # панель управления</span><br>win+r 	RegEdit<span class="colortextblue">      	        # редактор реестра</span><br>win+r	winver<span class="colortextblue">      	        # показывает версию Windows</span><br><span class="colortextred">win+r	sysdm.cpl</span><span class="colortextblue">      	        # system properties (свойства системы), </span><span class="colortextred"> редактирование переменной среды, PATH </span></h5>
             </pre>
 
-            <h4>При установке могут появиться сложности. Во первых из-за установленной версии Windows Home (усложняет управление настройками), во вторых Jenkins исправно работает только на версиях JAVA 8 - 11. Смотрим видео ниже</h4>
+            <h4>При установке могут появиться сложности. Во первых из-за установленной версии Windows Home (усложняет управление настройками), во вторых Jenkins исправно работает только на JAVA JDK версии 8-11. См. видео ниже.</h4>
 
             <h4 class="h4-pre">Мануал для установки Jenkins:</h4>
             <pre class="instructions">
@@ -70,7 +70,7 @@
 
             <h4>По умолчанию установщик Jenkins предлагает установить сервер в папку вида "C:/Program Files". Из-за того что в пути есть пробел (приводит к сложностям вызова приложений, например maven) рекомендуется устанавливать Jenkins в место где нет пробелов в пути, например "C:\ProgramData\Jenkins".</h4>
 
-            <h4>Установочный пакет jenkins при установке запросит указать путь к папке Java, следует указать папку версии java JDK любой версии 8 - 11</h4>
+            <h4>Установочный пакет jenkins при установке запросит указать путь к папке Java, следует указать папку версии java JDK версии 8-11</h4>
 
             <h4 class="h4-pre">Список плагинов рекомендуемых EPAM:</h4>
             <pre class="instructions">
@@ -101,6 +101,11 @@
               <h5>c:\ProgramData\Jenkins\.jenkins\workspace\Github job\<span class="colortextblue">   - Место хранения развернутого с githab проекта</span></h5>
             </pre>
 
+            <h4 class="h4-pre">Maven integration</h4>
+            <pre class="instructions">
+              <h5>Manage Jenkins -> Configure Global Security -> Global Tool Configuration -> Add Maven -> Name (пр.: 3.8.4)-> MAVEN_HOME (пр.: C:\Data\Maven\apache-maven-3.8.4) <span class="colortextblue"> - прописываем maven в настройках<br></span>Job Configure -> Build -> Invoke top-level Maven targets -> (v) Maven Version ### -> (v) name (пр.: test) -> advanced (указываем адрес POM file) (java/pom.xml)<span class="colortextblue">   - если не установлен</span><br></h5>
+            </pre>
+
             <h4 class="h4-pre">Artifacts</h4>
             <pre class="instructions">
               <h5>New job -> Configure -> Build -> Execute Windows batch command -> (ECHO Hello > file.txt) -> start job
@@ -121,12 +126,12 @@
             
             <h4 class="h4-pre">Agents (nodes)</h4>
             <pre class="instructions">
-              <h5>Build Executor Status -> New node -> (принято в имя вносить hostname подключаемой для работы машины) + Permanent Agent<span class="colortextblue"> - машины которые можно подключить к серверу и на них выполнять реальную работу (клонить из GIT проект, запускать сборки с помощью maven, тесты, параллелить jobs и т.д.)</span><br>указываем:<br> - Remote root directory (пр.: c:\Data\slave) (важно: без замыкающего слэша, с ним не работает)<br>Labels (пр.:win10 x64 chrom ff)<br>Usage (1.Использовать по макс. 2.Только избранные job (выбираем №2))<br>!!ВАЖНО: Manage Jenkins -> Configure Global Security -> Agents/TCP port for inbound agents/-> Random<span class="colortextblue"> - включили дополнительную опцию в настройках Nodes</span><br>Configure node -> Launch method -> Let Jenkins control this Windows agent as a Windows service</h5>
+              <h5>Build Executor Status -> New node -> (принято в имя вносить hostname подключаемой для работы машины) + Permanent Agent<span class="colortextblue"> - машины которые можно подключить к серверу и на них выполнять реальную работу (клонить из GIT проект, запускать сборки с помощью maven, тесты, параллелить jobs и т.д.)</span><br>указываем:<br> - Remote root directory (пр.: c:\Data\slave) (важно: без замыкающего слэша, с ним не работает)<br>Labels (пр.:win10 x64 chrom ff)<br>Usage (1.Использовать по макс. 2.Только избранные job (выбираем №2))<br>!!ВАЖНО: Manage Jenkins -> Configure Global Security -> Agents/TCP port for inbound agents/-> Random<span class="colortextblue"> - включили дополнительную опцию в настройках Nodes</span><br>Configure node -> Launch method -> <span class="colortextred">Launch agent by connecting it to the controller + (v) Use WebSocket</span></h5>
             </pre>
 
             <h4 class="h4-pre">Запуск Job на новой Node</h4>
             <pre class="instructions">
-              <h5>Job -> Configure -> Restrict where this project can be run (win10 or chrome or hostname -> Build Now)<span class="colortextblue"> - как итог в консоли: Finished: SUCCESS (результат см.: c:\Data\slave). Управлять mode можно из консоли.</span></h5>
+              <h5>Job -> Configure -> Restrict where this project can be run (win10 or chrome or hostname -> Build Now) -> <span class="colortextred">agent.jar</span> <span class="colortextblue">адресовать в нужную папку (пр.: c:\Data\slave1), где job будет отрабатывать</span> -> Run from agent command line: <span class="colortextblue">вставляем</span> java -jar agent.jar -jnlpUrl http://localhost:8080/computer/yura%2Dsts/jenkins-agent.jnlp -secret cc8ab56b25236a1c17e0494e338c1b5a95203aa76f8d4478ec5c8b8ced0b964b -workDir "c:\Data\slave1"<span class="colortextblue"> - как итог в консоли: Finished: SUCCESS (результат см.: c:\Data\slave1) </span><br>job configure -> (v) Restrict where this project can be run -> win10 or chrom or nodes name</h5>
             </pre>
 
             <h4 class="h4-pre">Запуск Job на удаленном node на Linux</h4>
@@ -139,31 +144,34 @@
               <h5><span class="colortextblue">If you locked yourself out (УТРАТА ДОСТУПА К JANKINS, ПОТЕРЯ ЛОГИНА ИЛИ ПАРОЛЯ)</span><br>1. Go to $JENKINS_HOME in the file system and find config.xml file.<br>2. Look for the (useSecurity)true(/useSecurity) element in this file. Replace true with false<br>3. Remove the elements authorizationStrategy and securityRealm<br>4. Restart Jenkins<br><span class="colortextblue">Скорректировав config.xml перезапускаем jenkins, он запустится с новыми настройками без авторизованного пользователя.</span><br>ВОССТАНАВЛИВАЕМ: <span class="colortextblue">Manage Jenkins -> Configure Global Security -> (v) Disable remember me -> (v) Jenkins’ own user database -> (v) Allow users to sign up (снять когда вся команда зарегистрировалась) -> Save</span><br><span class="colortextblue">Manage Jenkins -> Configure Global Security -> (v) Logged-in users can do anything -> Save</span><br>Useful plugin<br><span class="colortextblue">Matrix Authorization Strategy (УСТАНАЛИВАЕМ)</span><br>Manage Jenkins -> Configure Global Security -> (v) Matrix-based security -> Create & Save<br><span class="colortextblue">Можно создавать группы (Developers / managers / testers) и наделять каждую группу своими правами</span></h5>
             </pre>
 
-            <h4 class="h4-pre">Jenkins backup</h4>
+            <h4 class="h4-pre">Jenkins ThinBackup</h4>
             <pre class="instructions">
-              <h5>ThinBackup<br><span class="colortextblue">Manage Jenkins -> ThinBackup</span><br>Job Configuration History<br><span class="colortextblue">Позволяет отслеживать изменения настроек jenkins</span></h5>
+              <h5>ThinBackup<br><span class="colortextblue">Manage Jenkins -> ThinBackup -> Settings -> (путь, Cron full backups, Cron differential backups, (v) что бекапить)</span><br>Job Configuration History<br><span class="colortextblue">Позволяет отслеживать изменения настроек jenkins</span></h5>
             </pre>
-
-            <h4 class="h4-pre">Выполнение задачи</h4>
-            <pre class="instructions">
-              <h5>2) Создайте задачу которая будет делать следующее: <br> - Клонировать проект https://github.com/vitalliuss/helloci <span class="colortextblue"> # Dashboard -> Source Code Management -> Repository URL -> https://github.com/...</span><br> - Запускать тесты из проекта в директори Java с помощью цели mvn test<span class="colortextblue"> # Configure -> Build -> Invoke top-level Maven targets -> (v) Maven Version -> (v) name -> advanced (указываем адрес POM file) (java/pom.xml)</span><br>3) Настройте билд триггеры: <br> - Запуск тестов не позднее чем через 5 минут после коммита в git <span class="colortextblue"> # Build Triggers -> Poll SCM -> (H/5 * * * *)</span><br> - Каждый будний день в полночь<span class="colortextblue"> # Build Triggers -> Build periodically -> (0 0 * * 1-5)</span><br>4) Опубликуйте файл “Java\target\surefire-reports\com.github.vitalliuss.helloci.AppTest.txt” как артефакт <br><span class="colortextblue">Configure job -> Archive the artifacts -> Java\target\surefire-reports\...</span></h5>
-            </pre>
-
-
-            <h4 class="h4-pre">Maven integration</h4>
-            <pre class="instructions">
-              <h5>Configure -> Build -> Invoke top-level Maven targets -> (v) Maven Version ### -> (v) name -> advanced (указываем адрес POM file) (java/pom.xml)<span class="colortextblue">   - если не установлен</span><br></h5>
-            </pre>
-
 
             <h4 class="h4-pre">Удаление Jenkins:</h4>
             <pre class="instructions">
               <h5>кнопка find  cmd (от имени администратора) <span class="colortextblue"> # вызов коммандной строки от имени администратора</span><br>кнопка win+x (от имени администратора) <span class="colortextblue"> # вызов коммандной строки от имени администратора</span><br>sc delete Jenkins<span class="colortextblue">      	        # удаление Jenkins (из коммандной строки от имени администратора)</span></h5>
             </pre>            
 
+            <h4 class="h4-pre">задание "Bring It On"</h4>
+            <pre class="instructions">
+              <h5>2) Создайте задачу которая будет делать следующее: <br> - Клонировать проект https://github.com/vitalliuss/helloci <span class="colortextblue"> # Dashboard -> Source Code Management -> Repository URL -> https://github.com/...</span><br> - Запускать тесты из проекта в директори Java с помощью цели mvn test<span class="colortextblue"> # Configure -> Build -> Invoke top-level Maven targets -> (v) Maven Version -> (v) name -> advanced (указываем адрес POM file) (java/pom.xml)</span><br>3) Настройте билд триггеры: <br> - Запуск тестов не позднее чем через 5 минут после коммита в git <span class="colortextblue"> # Build Triggers -> Poll SCM -> (H/5 * * * *)</span><br> - Каждый будний день в полночь<span class="colortextblue"> # Build Triggers -> Build periodically -> (0 0 * * 1-5)</span><br>4) Опубликуйте файл “Java\target\surefire-reports\com.github.vitalliuss.helloci.AppTest.txt” как артефакт <br><span class="colortextblue">Configure job -> Post-build Actions -> Archive the artifacts -> Java\target\surefire-reports\...</span></h5>
+            </pre>
+
+            <h4 class="h4-pre">задание "Hurt Me Plenty"</h4>
+            <pre class="instructions">
+              <h5>Данное задание выполняется на основе Bring It On задачи. <br>1. Сменить порт сервера на 8081 <span class="colortextblue"> win+r	services.msc -> Jenkins остановить службу -> в jenkins.xml HttpPort изменить на 8081 save -> Запустить службу </span> <br>2. Создать ноду и настроить сервер так, чтобы джоба выполнялась только на slave ноде <span class="colortextblue">см. выше "agents (nodes)"</span><br><span class="colortextred">Важно: Если изменили порт на др. (пр.: 8081) то:"</span> <span class="colortextblue">Manage Jenkins -> Configure System -> Jenkins Location</span><br>3. Настроить Job Config History и thinBackup <span class="colortextblue"> Plugin Manager: Job Configuration History  &  thinBackup</span></h5>
+            </pre>
+
+            <h4 class="h4-pre">задание "Nightmare!"</h4>
+            <pre class="instructions">
+              <h5><span class="colortextred">Выполните все предыдущие практические задания используя ноду на линуксе. </span> </h5>
+            </pre>
+
+
           </div>
         </div>
-
       </div>
       <div class="clear"></div>
     </div>
