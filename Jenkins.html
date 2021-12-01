@@ -41,7 +41,7 @@
                   <li><a href="git.html">GIT</a></li>
                   <li><a href="Node.html">NodeJS</a></li>
                   <li class="active"><a href="Jenkins.html">Jenkins</a></li>
-                  <li><a href="Bootstrap.html">Bootstrap</a></li>
+                  <li><a href="UnitTesting.html">Unit Testing</a></li>
                   <li><a href="#">JS</a></li>
                 </ul>
               </div>
@@ -56,23 +56,21 @@
           <div class="col-lg-12">
             <h1 class="title">Jenkins</h1>
             
-            <h4 class="h4-pre">Необходимые запросы и инфрмация для установки и работы с Jenkins:</h4>
+            <h4 class="h4-pre">При установке могут появиться сложности. Во первых из-за установленной версии Windows Home (усложняет управление настройками), во вторых Jenkins исправно работает только на JAVA JDK версии 8-11. См. видео ниже. <br>Необходимые запросы и инфрмация для установки и работы с Jenkins:</h4>
             <pre class="instructions">
               <h5><a href="https://www.oracle.com/	">https://www.oracle.com/</a><span class="colortextblue">	        # тут скачиваем Java jdk</span><br><a href="https://www.jenkins.io/	">https://www.jenkins.io/</a><span class="colortextblue">         # тут скачиваем Jenkins</span><br><a href="https://maven.apache.org/ ">https://maven.apache.org/</a><span class="colortextblue">       # тут скачиваем Maven</span><br><a href="https://csharpcoderr.com/5265// ">https://csharpcoderr.com/5265/</a><span class="colortextblue">  # как установить Maven на windows</span><br>win+r 	cmd<span class="colortextblue">                     # вызов коммандной строки</span><br>win+r   cmd 	hostname<span class="colortextblue">        # имя hostname</span><br>win+r   cmd 	java -version<span class="colortextblue">   # версия Java</span><br>win+r   cmd 	pwd<span class="colortextblue">             # выводится полный путь к текущей рабочей директории</span><br>win+r   cmd 	nslookup<span class="colortextblue">        # выводится IP адрес машины</span><br>win+r   cmd 	ipconfig<span class="colortextblue">        # выводится IP адрес и более полную информацию о машине в сети</span><br>win+r   cmd 	mvn --version<span class="colortextblue">   # выводится версия maven</span><br>win+r   cmd 	set maven<span class="colortextblue">       # выводится путь к maven</span><br>win+r	services.msc<span class="colortextblue">      	# список сервисов управление Jenkins через панель services</span><br>win+r 	control<span class="colortextblue">      	        # панель управления</span><br>win+r 	RegEdit<span class="colortextblue">      	        # редактор реестра</span><br>win+r	winver<span class="colortextblue">      	        # показывает версию Windows</span><br><span class="colortextred">win+r	sysdm.cpl</span><span class="colortextblue">      	        # system properties (свойства системы), </span><span class="colortextred"> редактирование переменной среды, PATH </span></h5>
             </pre>
-
-            <h4>При установке могут появиться сложности. Во первых из-за установленной версии Windows Home (усложняет управление настройками), во вторых Jenkins исправно работает только на JAVA JDK версии 8-11. См. видео ниже.</h4>
 
             <h4 class="h4-pre">Мануал для установки Jenkins:</h4>
             <pre class="instructions">
               <h5><a href="https://www.youtube.com/watch?v=1y8RsUbxtAw">https://www.youtube.com/watch?v=1y8RsUbxtAw</a><br><a href="https://stackoverflow.com/questions/63410442/jenkins-installation-windows-10-service-logon-credentials">https://stackoverflow.com/questions/63410442/jenkins-installation-windows-10-service-logon-credentials</a></h5>
             </pre>
 
-            <h4>По умолчанию установщик Jenkins предлагает установить сервер в папку вида "C:/Program Files". Из-за того что в пути есть пробел (приводит к сложностям вызова приложений, например maven) рекомендуется устанавливать Jenkins в место где нет пробелов в пути, например "C:\ProgramData\Jenkins".</h4>
+            <h4></h4>
 
-            <h4>Установочный пакет jenkins при установке запросит указать путь к папке Java, следует указать папку версии java JDK версии 8-11</h4>
+            <h4></h4>
 
-            <h4 class="h4-pre">Список плагинов рекомендуемых EPAM:</h4>
+            <h4 class="h4-pre">По умолчанию установщик Jenkins предлагает установить сервер в папку вида "C:/Program Files". Из-за того что в пути есть пробел (приводит к сложностям вызова приложений, например maven) рекомендуется устанавливать Jenkins в место где нет пробелов в пути, например "C:\ProgramData\Jenkins". <br> Установочный пакет jenkins при установке запросит указать путь к папке Java, следует указать папку версии java JDK версии 8-11. <br>Список плагинов рекомендуемых EPAM:</h4>
             <pre class="instructions">
               <h5>Dashboard View<br>Workspace Cleanup<br>JUnit<br>Pipeline<br>Build pipeline - ставится из плагинов<br>Parameterized Trigger<br>Copy Artifact<br>Git<br>Matrix Project<br>SSH Build Agents<br>WMI Windows Agents<br>Mailer<br>Locale</h5>
             </pre>
@@ -162,6 +160,11 @@
             <h4 class="h4-pre">задание "Hurt Me Plenty"</h4>
             <pre class="instructions">
               <h5>Данное задание выполняется на основе Bring It On задачи. <br>1. Сменить порт сервера на 8081 <span class="colortextblue"> win+r	services.msc -> Jenkins остановить службу -> в jenkins.xml HttpPort изменить на 8081 save -> Запустить службу </span> <br>2. Создать ноду и настроить сервер так, чтобы джоба выполнялась только на slave ноде <span class="colortextblue">см. выше "agents (nodes)"</span><br><span class="colortextred">Важно: Если изменили порт на др. (пр.: 8081) то:"</span> <span class="colortextblue">Manage Jenkins -> Configure System -> Jenkins Location</span><br>3. Настроить Job Config History и thinBackup <span class="colortextblue"> Plugin Manager: Job Configuration History  &  thinBackup</span></h5>
+            </pre>
+
+            <h4 class="h4-pre">Не выполненное задание cobertura:cobertura"</h4>
+            <pre class="instructions">
+              <h5><a href="https://elearn.epam.com/courses/course-v1:EPAM+CIJ+RU/courseware/a5dd8b942ab2412bb3bb0a5dd2a10cc2/43d02a4a7c8b4f3aa2894f51590efbb5/4?activate_block_id=block-v1%3AEPAM%2BCIJ%2BRU%2Btype%40vertical%2Bblock%406e61af367c274f44ae72bd82c39c1d9b	">https://elearn.epam.com/courses/course-v1:EPAM+CIJ+RU/courseware/a5dd8b942ab2412bb3bb0a5dd2a10cc2/43d02a4a7c8b4f3aa2894f51590efbb5/4?activate_block_id=block-v1%3AEPAM%2BCIJ%2BRU%2Btype%40vertical%2Bblock%406e61af367c274f44ae72bd82c39c1d9b/</a><br><span class="colortextred"> С помощью цели  mvn cobertura:cobertura измерьте покрытие кода юнит-тестами (code coverage) и опубликуйте на странице джобы в виде графика</span></h5>
             </pre>
 
             <h4 class="h4-pre">задание "Nightmare!"</h4>
