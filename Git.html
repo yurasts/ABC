@@ -57,66 +57,31 @@
 
             <h1 class="title">GIT + github.com</h1>
 
-            <h4 class="h4-pre">Загрузить гит можно тут:</h4>
+            <h4 class="h4-pre">Работа с GIT + github. Подготовка</h4>
             <pre class="instructions">
-              <h5>http://git-scm.com/downloads</h5>
+              <h5><span class="colortextblue"><a href="http://git-scm.com/downloads" target="_blank">http://git-scm.com/downloads</a></span><span class="colortextgreen">       # Загружаем GIT тут</span><br><span class="colortextblue">$ ssh-keygen -t rsa -C "your_email@whatever.com"</span><span class="colortextgreen"> # Создание публичных ключей (Отправить владельцу репозитория для получения прав, либо самостоятельно загрузить в настройки профиля github,bitbucket, gitlab)</span><br><span class="colortextblue">$ git config --global user.name "Your Name"</span><span class="colortextgreen">   # имя пользователя (необходимая настройка)</span><br><span class="colortextblue">$ git config --global user.email "your_email@whatever.com"</span><span class="colortextgreen">   # e-mail пользователя (необходимая настройка)</span><br> <span class="colortextblue">$ git init</span><span class="colortextgreen">   # Создание репозитория (в папке проекта появится скрытая папка git) (Либо папку можно создать на github. Клонируем репозиторий на локальную машину: если ключи сгенерированы можно через SSH иначе через HTTPS)</span><br><span class="colortextblue">$ git clone git@github.com:yurasts/git-demo.git</span><span class="colortextgreen">   # клонирование проекта созданного на githab.com (где git@github.com:yurasts/git-demo.git SSH или HTTPS)</span><br><br><span class="colortextred">"ctrl"+"ins"</span> - вставка в git bash  / <span class="colortextred">"shift"+"ins"</span> - копирование в git bash</h5>
             </pre>
 
-            <h4 class="h4-pre">Создание публичных ключей (id_rsa)</h4>
+            <h4 class="h4-pre">Работа с папками в GIT BUSH</h4>
             <pre class="instructions">
-              <h5>$ ssh-keygen -t rsa -C "your_email@whatever.com"</h5>
-            </pre>
+              <h5><span class="colortextred">$ pwd</span> <span class="colortextgreen">              # текущий адрес</span><br><span class="colortextblue">$ cd /c/data/te...</span><span class="colortextgreen">  # переход в папку</span><br><span class="colortextblue">$ cd .. </span><span class="colortextgreen">            # выйти на 1 уровень выше</span><br><span class="colortextblue">$ cd ../.. </span></span><span class="colortextgreen">         # выйти на 2 уровня выше</span><br><span class="colortextblue">$ mkdir New_Proj</span><span class="colortextgreen">    # создать каталог</span><br><span class="colortextblue">$ cd !$ </span><span class="colortextgreen">            # перейти в только что созданную папку</span><br><span class="colortextblue">$ cd name </span><span class="colortextgreen">          # войти в папку</span><br><span class="colortextblue">$ ls </span><span class="colortextgreen">               # просмотр содержимого папки</span><br><br><span class="colortextblue">$ git remote -v</span><span class="colortextgreen">  # проверка действительно ли мы на github а не каком-то другом хостингеу</span><br><br><span class="colortextred">$ git status</span><span class="colortextgreen">  # проверка на наличие изменений в рабочем каталоге <br> СТАТУС 1. <span class="colortextred">index.html</span> - новый файл не отслеживается системой git или в файл внесли изменения.<br> СТАТУС 2. <span class="colortextblue">style.css</span> - файл добавлен в отслеживание системой git.<br> СТАТУС 3. После commita, т.е. создания контрольной точки, добавленных в отслеживание файлов при выполнении команды "git status" не будет видно </span></h5>
+            </pre>   
 
-            <p>Отправить владельцу репозитория для получения прав работы, 
-              либо самостоятельно загрузить в настройки профиля в bitbucket, github, gitlab</p>
-            <h4 class="h4-pre">Настройка имени пользователя и e-mail:</h4>
             <pre class="instructions">
-              <h5>$ git config --global user.name "Your Name"<br>$ git config --global user.email "your_email@whatever.com"</h5>
-            </pre>
-            <h4 class="h4-pre">Создание репозитория</h4>
-            <pre class="instructions">
-              <h5>$ git init</h5>
-            </pre>
-            <p>В папке проекта появится скрытая папка git</p>
-            <p>Либо в github. Клонируем репозиторий на локальную машину: 
-              если ключи сгенерированы можно через SSH (иначе через HTTPS), копируем </p>
-
-             <h4 class="h4-pre">клонируем проект созданный на githab.com (SSH или HTTPS)</h4>
-            <pre class="instructions">
-              <h5>$ git clone git@github.com:yurasts/git-demo.git</h5>
-            </pre>
-            <p><span class="colortextred">ctrl+ins</span> - вставка в git bash  / <span class="colortextred">shift+ins</span> - копирование в git bash</p>
-
-            <h4 class="h4-pre">работа с папками</h4>
-            <pre class="instructions">
-              <h5><span class="colortextred">$ pwd</span> <span class="colortextblue">- текущий адрес</span><br>$ cd /c/data/temp/git-demo  <span class="colortextblue"> - переход в папку</span><br>$ cd .. <span class="colortextblue">- выйти на 1 уровень выше</span><br>$ cd ../.. <span class="colortextblue">- выйти на 2 уровня выше</span><br>$ mkdir First Project <span class="colortextblue">- создать каталог</span><br>$ cd !$ <span class="colortextblue">- перейти в только что созданную папку</span><br>$ cd name <span class="colortextblue">- войти в папку</span><br>$ ls <span class="colortextblue">- просмотр содержимого папки</span></h5>
-            </pre>
-            <h4 class="h4-pre">проверка действительно ли мы на github а не каком-то другом хостингеу</h4>
-            <pre class="instructions">
-              <h5>$ git remote -v</h5>
-            </pre>
-            <h4 class="h4-pre">проверка на наличие изменений в рабочем каталоге:</h4>
-            <pre class="instructions">
-              <h5>$ git status</h5>
-            </pre>
-            <p><span class="colortextred">index.html</span> - новый файл не отслеживается системой git или в файл внесли изменения (статус 1)</p>
-            <p><span class="colortextblue">style.css</span> - файл добавлен в отслеживание системой git (статус 2)</p>
-            <p>После commita, т.е. создания контрольной точки, добавленных в отслеживание файлов при выполнении команды "git status" не будет видно (статус 3)</p>
-
-            <h3> Добавление файлов в состояние "отслеживание" или индексировать изменения </h3>
-            <pre class="instructions">
-              <h5>$ git add -A <span class="colortextblue">- все файлы</span><br>$ git add style.css <span class="colortextblue">- один файл</span><br>$ git add *.css<span class="colortextblue">- группу файлов</span></h5>
-              <h5>$ git reset <span class="colortextblue">- отмена добавления в отслеживание</span></h5>
+              <h5><span class="colortextblue">Добавление файлов в состояние "отслеживание" </span><br><span class="colortextred">$ git add -A </span><span class="colortextgreen">         # все файлы</span><br><span class="colortextred">$ git add style.css </span><span class="colortextgreen">  # один файл</span><br><span class="colortextred">$ git add *.css</span><span class="colortextgreen">       # группу файлов</span><br><br><span class="colortextred">$ git reset </span><span class="colortextgreen">          # отмена добавления в отслеживание</span></h5>
             </pre>
             
-            <h3> Добавление файлов в состояние Commit и передача на github </h3>
-              <pre class="instructions">
-              <h5>$ <span class="colortextred">git commit -m "add first 2 lines in the song.txt"</span> <span class="colortextblue">- добавление комментария об изменении файла</span><br>$ git push <span class="colortextblue">- добавление изменений на github</span><br>$ git pull <span class="colortextblue">- обновление данных с github</span><br><span class="colortextred">$ git log </span><span class="colortextblue">- смотрим историю коммитов</span></h5>
+            <pre class="instructions">
+              <h5><span class="colortextblue">Добавление файлов в состояние Commit и передача на github </span><br><span class="colortextred">$ git commit -m "add file song.txt"</span> <span class="colortextgreen"> # добавление комментария об изменении файла</span><br><span class="colortextred">$ git push </span><span class="colortextgreen">  # добавление изменений на github</span><br><span class="colortextred">$ git pull </span><span class="colortextgreen">  # подтягивание новых данных с github</span><br><span class="colortextred">$ git log </span><span class="colortextgreen">   # просмотр истории коммитов</span></h5>
             </pre>
 
-            <h4 class="h4-pre">вспомогательные скины (упрощают работу)</h4>
             <pre class="instructions">
-              <h5>$ git gui&<br>$ gitk</h5>
+              <h5><span class="colortextblue">КАК ОТМЕНИТЬ КОММИТ ЗАПУШЕННЫЙ НА GITHAB</span> <br><span class="colortextred">$ git reset --hard c7981caa96585ff5491b74b1e327f3026a819e05</span> <span class="colortextgreen"> - отменяется 1 коммит (хеш-код из githab)</span><br><span class="colortextred">$ git push --force</span> <span class="colortextgreen">  - пушится на  измененный коммит</span></h5>
+            </pre>
+
+
+            <pre class="instructions">
+              <h5><span class="colortextblue">Вспомогательные скины (упрощают работу)</span> <br><span class="colortextred">$ git gui&<br>$ gitk</span></h5>
             </pre>
 
             <h3> Изменение или отмена действий </h3>
@@ -141,10 +106,7 @@
               <h5>$ git reset --soft HEAD~1 <span class="colortextblue">                  - отменить 1 коммит, контент изменений сохранится, файл в индексе</span><br>$ git reset --mixed HEAD~1 <span class="colortextblue">                 - отменить 1 коммит, контент изменений сохранится, файл НЕ в индексе</span><br>$ git reset --hard HEAD~1 <span class="colortextblue">                  - отменить 1 коммит, контент изменений НЕ сохранится</span><br>$ git commit --amend -m "commit message" <span class="colortextblue">   - в случае если в коммит нужно что-то дописать</span></h5>
             </pre>
 
-            <h4 class="h4-pre">КАК ОТМЕНИТЬ КОММИТ ЗАПУШЕННЫЙ НА GITHAB</h4>
-            <pre class="instructions">
-              <h5>$ git reset --hard c7981caa96585ff5491b74b1e327f3026a819e05 <span class="colortextblue">   - отменяется 1 коммит (хеш-код из githab)</span><br>$ git push --force <span class="colortextblue">                 - пушится на  измененный коммит</span></h5>
-            </pre>
+
 
             <h3> Работа с ветками </h3>
             <h4 class="h4-pre">создание, пререход, объединение веток</h4>
