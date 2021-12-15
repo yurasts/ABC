@@ -37,12 +37,12 @@
               </div>
               <div id="navbarCollapse" class="collapse navbar-collapse navbar-right">
                 <ul class="nav nav-pills">
-                  <li class="active"><a href="#">Главная</a></li>                  
+                  <li><a href="index.html">Главная</a></li>                  
                   <li><a href="git.html">GIT</a></li>
                   <li><a href="Node.html">NodeJS</a></li>
                   <li><a href="Jenkins.html">Jenkins</a></li>
                   <li><a href="UnitTesting.html">Unit Testing</a></li>
-                  <li><a href="js.html">JS</a></li>
+                  <li class="active"><a href="js.html">JS</a></li>
                 </ul>
               </div>
             </div>
@@ -54,18 +54,15 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <hr>
            
-            <h4 class="h4-pre">Полезное видео:</h4>
+            <h4 class="h4-pre"></h4>
             <pre class="instructions">
-              <h5><a href="https://www.youtube.com/c/RollingScopesSchool/videos/ ">https://www.youtube.com/c/RollingScopesSchool/videos</a><span class="colortextgreen">    # Библиотека обучающего видео Rolling Scopes School </span><br><a href="https://www.youtube.com/watch?v=G_HKJJLozUc ">https://www.youtube.com/watch?v=G_HKJJLozUc</a><span class="colortextgreen">    # Git - <span class="colortextblue">Pull request</span> на практике / GitHub </span><br></h5>
+              <h5><span class="colortextblue">Текущее время:</span><br>let <span class="colortextred">getTime</span> = () => new <span class="colortextred">Date</span>().<span class="colortextred">getHours</span>() + ':' + new <span class="colortextred">Date</span>().<span class="colortextred">getMinutes</span>() + ':' + new <span class="colortextred">Date</span>().<span class="colortextred">getSeconds</span>();<br>console.log(<span class="colortextred">getTime</span>());</h5>
             </pre>
+            <pre class="instructions">
+                <h5><span class="colortextblue">Или:</span><span class="colortextgreen">когда тело функции достаточно большое, то можно его обернуть в фигурные скобки {…}</span><br>let <span class="colortextred">getTime</span> = () => {<br> let <span class="colortextblue">date</span> = new <span class="colortextred">Date</span>();<br> let <span class="colortextblue">hours</span> = date.<span class="colortextred">getHours</span>();<br> let <span class="colortextblue">minutes</span> = date.<span class="colortextred">getMinutes</span>();<br> let <span class="colortextblue">seconds</span> = date.<span class="colortextred">getSeconds</span>();<br> return <span class="colortextblue">hours</span> + ':' + <span class="colortextblue">minutes</span> + ':' + <span class="colortextblue">seconds</span>;<br> };<br><br> console.log( <span class="colortextred">getTime</span>() );<span class="colortextgreen"> // выводит только выбранные значения функции new Date()</span><br> console.log( new <span class="colortextred">Date</span>() );<span class="colortextgreen"> // выводит все значения функции new Date()</span><br><br><span class="colortextgreen"> // если тело функции оборачивается в {…}, то результат не возвращается автоматически, необходимо добавить</span> return.</h5>
+              </pre>
 
-
-
-            
-            
-            
 
           </div>
         </div>
